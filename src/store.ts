@@ -12,6 +12,10 @@ export const deleteMock = (method: string, path: string): boolean => {
 	return mocks.delete(getKey(method, path));
 };
 
+export const deleteAllMocks = (): void => {
+	mocks.clear();
+};
+
 export const getMock = (method: string, path: string) => {
 	return mocks.get(getKey(method, path));
 };

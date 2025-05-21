@@ -41,11 +41,16 @@ curl -X POST --location "http://localhost:8080/echomock" \
 curl -X GET --location "http://localhost:8080/example"
 ```
 
-4. Delete the mock:
+4. Delete a specific mock:
 ```bash
 curl -X DELETE --location "http://localhost:8080/echomock" \
     -H "X-ECHOMOCK-METHOD: GET" \
     -H "X-ECHOMOCK-PATH: /example"
+```
+
+5. Delete all mocks:
+```bash
+curl -X DELETE --location "http://localhost:8080/echomock/all"
 ```
 
 ### Library Usage
@@ -57,7 +62,7 @@ npm install -D @sya-ri/echomock
 
 2. Use in your code:
 ```typescript
-import { serve, registerMock, deleteMock } from "@sya-ri/echomock";
+import { serve, registerMock, deleteMock, deleteAllMocks } from "@sya-ri/echomock";
 
 // Start the server
 serve(3000);
@@ -75,8 +80,11 @@ await registerMock({
   }))
 });
 
-// Delete a mock
+// Delete a specific mock
 deleteMock("GET", "/example");
+
+// Delete all mocks
+deleteAllMocks();
 ```
 
 ## Use Cases

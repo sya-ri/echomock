@@ -1,12 +1,12 @@
 import { Hono } from "hono";
 import {
+	X_ECHOMOCK_CODE,
 	X_ECHOMOCK_METHOD,
 	X_ECHOMOCK_PATH,
-	X_ECHOMOCK_CODE,
 	X_ECHOMOCK_RES,
 	X_ECHOMOCK_RES_LENGTH,
 } from "./const.js";
-import { registerMock, deleteMock, getMock } from "./store.js";
+import { deleteAllMocks, deleteMock, getMock, registerMock } from "./store.js";
 
 export default new Hono()
 	.post("/echomock", async (c) => {
@@ -96,6 +96,10 @@ export default new Hono()
 		return c.json({
 			message: "Successfully deleted",
 		});
+	})
+	.delete("/echomock/all", (c) => {
+		deleteAllMocks();
+		return c.json({ message: "All mocks deleted" });
 	})
 	.all("/*", async (c) => {
 		const mock = getMock(c.req.method, c.req.path);
