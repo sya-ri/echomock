@@ -1,15 +1,8 @@
 {
 	"name": "@sya-ri/echomock",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A lightweight and flexible API mocking tool that focuses on accurate response handling",
-	"keywords": [
-		"mock",
-		"api",
-		"testing",
-		"development",
-		"echo",
-		"server"
-	],
+	"keywords": ["mock", "api", "testing", "development", "echo", "server"],
 	"homepage": "https://github.com/sya-ri/echomock#readme",
 	"bugs": {
 		"url": "https://github.com/sya-ri/echomock/issues"
@@ -32,11 +25,7 @@
 	"bin": {
 		"echomock": "./dist/bin/start.js"
 	},
-	"files": [
-		"dist",
-		"README.md",
-		"LICENSE"
-	],
+	"files": ["dist", "README.md", "LICENSE"],
 	"scripts": {
 		"build": "tsc",
 		"check": "biome check",
