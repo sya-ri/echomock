@@ -31,10 +31,30 @@ curl -X POST --location "http://localhost:8080/echomock" \
     -d '{ "message": "hello from echomock!!" }'
 ```
 
+```json
+{"message":"Successfully registered"}
+```
+
+### Try
+
+```shell
+curl -X GET --location "http://localhost:8080/example"
+```
+
+```json
+{ "message": "hello from echomock!!" }
+```
+
 ### Delete a Mock
 
 ```bash
-curl -X DELETE --location "http://localhost:8080/echomock"
+curl -X DELETE --location "http://localhost:8080/echomock" \
+    -H "X-ECHOMOCK-METHOD: GET" \
+    -H "X-ECHOMOCK-PATH: /example"
+```
+
+```json
+{"message":"Successfully deleted"}
 ```
 
 ## Use Cases
