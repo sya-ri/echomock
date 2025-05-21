@@ -1,6 +1,6 @@
 # echomock
 
-[![npm version](https://badge.fury.io/js/echomock.svg)](https://badge.fury.io/js/echomock)
+[![npm version](https://badge.fury.io/js/@sya-ri%2Fechomock.svg)](https://badge.fury.io/js/@sya-ri%2Fechomock)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight and flexible API mocking tool that focuses on accurate response handling. Perfect for testing and development environments.
@@ -15,7 +15,7 @@ A lightweight and flexible API mocking tool that focuses on accurate response ha
 ## Installation
 
 ```bash
-npm install -D echomock
+npm install -D @sya-ri/echomock
 ```
 
 ## Quick Start
