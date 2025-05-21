@@ -1,39 +1,38 @@
 import { Hono } from "hono";
 import {
-	X_TESTMOCK_PATH,
-	X_TESTMOCK_METHOD,
-	X_TESTMOCK_ID,
-	X_TESTMOCK_RES,
-	X_TESTMOCK_RES_LENGTH,
-	X_TESTMOCK_CODE,
+	X_ECHOMOCK_METHOD,
+	X_ECHOMOCK_PATH,
+	X_ECHOMOCK_CODE,
+	X_ECHOMOCK_RES,
+	X_ECHOMOCK_RES_LENGTH,
 } from "./const.js";
 import { addMock, deleteMock, getMock } from "./store.js";
 
 export default new Hono()
-	.post("/testmock", async (c) => {
-		const method = c.req.header(X_TESTMOCK_METHOD);
+	.post("/echomock", async (c) => {
+		const method = c.req.header(X_ECHOMOCK_METHOD);
 		if (!method?.length) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_METHOD} must not be empty`,
+					message: `${X_ECHOMOCK_METHOD} must not be empty`,
 				},
 				400,
 			);
 		}
-		const path = c.req.header(X_TESTMOCK_PATH);
+		const path = c.req.header(X_ECHOMOCK_PATH);
 		if (!path?.length) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_PATH} must not be empty`,
+					message: `${X_ECHOMOCK_PATH} must not be empty`,
 				},
 				400,
 			);
 		}
-		const rawCode = c.req.header(X_TESTMOCK_CODE);
+		const rawCode = c.req.header(X_ECHOMOCK_CODE);
 		if (!rawCode) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_CODE} must not be empty`,
+					message: `${X_ECHOMOCK_CODE} must not be empty`,
 				},
 				400,
 			);
@@ -42,15 +41,15 @@ export default new Hono()
 		if (Number.isNaN(code)) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_CODE} must be integer, actual ${rawCode}`,
+					message: `${X_ECHOMOCK_CODE} must be integer, actual ${rawCode}`,
 				},
 				400,
 			);
 		}
 		const headers = Object.fromEntries(
 			Object.entries(c.req.header())
-				.filter(([key]) => key.startsWith(X_TESTMOCK_RES))
-				.map(([key, value]) => [key.slice(X_TESTMOCK_RES_LENGTH), value]),
+				.filter(([key]) => key.startsWith(X_ECHOMOCK_RES))
+				.map(([key, value]) => [key.slice(X_ECHOMOCK_RES_LENGTH), value]),
 		);
 		const body = c.req.raw.body
 			? new Uint8Array(await c.req.arrayBuffer())
@@ -66,21 +65,21 @@ export default new Hono()
 			message: "Successfully added",
 		});
 	})
-	.delete("/testmock", async (c) => {
-		const method = c.req.header(X_TESTMOCK_METHOD);
+	.delete("/echomock", async (c) => {
+		const method = c.req.header(X_ECHOMOCK_METHOD);
 		if (!method?.length) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_METHOD} must not be empty`,
+					message: `${X_ECHOMOCK_METHOD} must not be empty`,
 				},
 				400,
 			);
 		}
-		const path = c.req.header(X_TESTMOCK_PATH);
+		const path = c.req.header(X_ECHOMOCK_PATH);
 		if (!path?.length) {
 			return c.json(
 				{
-					message: `${X_TESTMOCK_PATH} must not be empty`,
+					message: `${X_ECHOMOCK_PATH} must not be empty`,
 				},
 				400,
 			);

@@ -1,6 +1,6 @@
-# testmock
+# echomock
 
-[![npm version](https://badge.fury.io/js/testmock.svg)](https://badge.fury.io/js/testmock)
+[![npm version](https://badge.fury.io/js/echomock.svg)](https://badge.fury.io/js/echomock)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight and flexible API mocking tool that focuses on accurate response handling. Perfect for testing and development environments.
@@ -8,14 +8,14 @@ A lightweight and flexible API mocking tool that focuses on accurate response ha
 ## Features
 
 - 🔄 **Request Body Echo**: Automatically returns request body as response body
-- 🎯 **Dynamic Headers**: Set response headers using `X-TMOCK-RES-<HEADER_NAME>` format
+- 🎯 **Dynamic Headers**: Set response headers using `X-ECHOMOCK-RES-<HEADER_NAME>` format
 - 📝 **RESTful API**: Manage mocks through simple REST endpoints
 - 🚀 **Simple Integration**: Easy to use in any development or testing environment
 
 ## Installation
 
 ```bash
-npm install -D testmock
+npm install -D echomock
 ```
 
 ## Quick Start
@@ -23,20 +23,18 @@ npm install -D testmock
 ### Register a Mock
 
 ```bash
-curl -X POST --location "http://localhost:8080/testmock" \
-    -H "X-TESTMOCK-METHOD: GET" \
-    -H "X-TESTMOCK-PATH: /example" \
-    -H "X-TESTMOCK-CODE: 200" \
-    -H "X-TESTMOCK-RES-Content-Type: application/json" \
-    -d '{ "message": "hello from testmock!!" }'
+curl -X POST --location "http://localhost:8080/echomock" \
+    -H "X-ECHOMOCK-METHOD: GET" \
+    -H "X-ECHOMOCK-PATH: /example" \
+    -H "X-ECHOMOCK-CODE: 200" \
+    -H "X-ECHOMOCK-RES-Content-Type: application/json" \
+    -d '{ "message": "hello from echomock!!" }'
 ```
 
 ### Delete a Mock
 
 ```bash
-curl -X DELETE --location "http://localhost:8080/testmock" \
-    -H "X-TESTMOCK-METHOD: GET" \
-    -H "X-TESTMOCK-PATH: /example"
+curl -X DELETE --location "http://localhost:8080/echomock"
 ```
 
 ## Use Cases
