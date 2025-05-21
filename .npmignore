@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+node_modules
+src
+bin
+*.log
+*.test.ts
+*.spec.ts
+tsconfig.json
+biome.json
+.npmrc
+.gitignore 
