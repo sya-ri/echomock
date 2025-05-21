@@ -6,7 +6,7 @@ import {
 	X_ECHOMOCK_RES,
 	X_ECHOMOCK_RES_LENGTH,
 } from "./const.js";
-import { addMock, deleteMock, getMock } from "./store.js";
+import { registerMock, deleteMock, getMock } from "./store.js";
 
 export default new Hono()
 	.post("/echomock", async (c) => {
@@ -54,7 +54,7 @@ export default new Hono()
 		const body = c.req.raw.body
 			? new Uint8Array(await c.req.arrayBuffer())
 			: null;
-		addMock({
+		registerMock({
 			method,
 			path,
 			code,

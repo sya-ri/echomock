@@ -4,7 +4,7 @@ const mocks = new Map<string, MockData>();
 
 const getKey = (method: string, path: string): string => `${method}:${path}`;
 
-export const addMock = (mock: MockData) => {
+export const registerMock = (mock: MockData) => {
 	mocks.set(getKey(mock.method, mock.path), mock);
 };
 
