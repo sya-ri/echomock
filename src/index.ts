@@ -1,12 +1,9 @@
-import { serve } from "@hono/node-server";
+import { serve as honoServe } from "@hono/node-server";
 import app from "./app.js";
 
-serve(
-	{
+export const serve = (port: number) => {
+	return honoServe({
 		fetch: app.fetch,
-		port: 8080,
-	},
-	(info) => {
-		console.log(`Server is running on http://localhost:${info.port}`);
-	},
-);
+		port,
+	});
+};

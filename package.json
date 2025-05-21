@@ -2,12 +2,16 @@
 	"name": "echomock",
 	"license": "MIT",
 	"type": "module",
+	"main": "./dist/index.js",
+	"bin": {
+		"echomock": "./dist/bin/start.js"
+	},
 	"scripts": {
 		"build": "tsc",
 		"check": "biome check",
-		"dev": "tsx watch src/index.ts",
+		"dev": "tsx watch bin/start.ts",
 		"fix": "biome check --write",
-		"start": "node dist/index.js"
+		"start": "node dist/bin/start.js"
 	},
 	"dependencies": {
 		"@hono/node-server": "1.14.2",
