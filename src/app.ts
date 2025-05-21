@@ -62,7 +62,7 @@ export default new Hono()
 			body,
 		});
 		return c.json({
-			message: "Successfully added",
+			message: "Successfully registered",
 		});
 	})
 	.delete("/echomock", async (c) => {
