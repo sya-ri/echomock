@@ -1,5 +1,6 @@
 {
 	"name": "testmock",
+	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
