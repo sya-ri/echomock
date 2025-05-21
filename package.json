@@ -40,7 +40,7 @@
 	"scripts": {
 		"build": "tsc",
 		"check": "biome check",
-		"dev": "tsx watch bin/start.ts",
+		"dev": "tsx watch src/bin/start.ts",
 		"fix": "biome check --write",
 		"prepublishOnly": "npm run build",
 		"start": "node dist/bin/start.js",

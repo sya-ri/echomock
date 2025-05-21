@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { serve } from "../src/index.js";
+import { serve } from "../index.js";
 
 const port = Number.parseInt(process.argv[2] ?? "8080", 10);
 if (Number.isNaN(port)) {
