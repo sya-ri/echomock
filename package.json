@@ -1,6 +1,6 @@
 {
 	"name": "@sya-ri/echomock",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "A lightweight and flexible API mocking tool that focuses on accurate response handling",
 	"keywords": ["mock", "api", "testing", "development", "echo", "server"],
 	"homepage": "https://github.com/sya-ri/echomock#readme",
